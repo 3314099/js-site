@@ -1,0 +1,25 @@
+{
+  "name": "js-site",
+  "version": "1.0.0",
+  "description": "Learning js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://3314099@bitbucket.org/3314099/js-site.git"
+  },
+  "keywords": [
+    "javascript",
+    "learning",
+    "node",
+    "express",
+    "sass",
+    "redux"
+  ],
+  "author": "Andrey Petrov <3314099@mail.ru>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/3314099/js-site#readme",
+  "privet": true
+}
