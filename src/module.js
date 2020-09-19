@@ -1,5 +1,7 @@
 console.log('Module')
 
 async function start() {
-	await Promise.resolve()
+	return await Promise.resolve('asyncfgfhg working')
 }
+
+start().then(console.log)

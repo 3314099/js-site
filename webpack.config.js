@@ -12,7 +12,7 @@ const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
-	entry: './index.js',
+	entry: ['@babel/polyfill', './index.js'],
 	output: {
 		filename: filename('js'),
 		path: path.resolve(__dirname, 'dist')
@@ -24,6 +24,10 @@ module.exports = {
 		}
 	},
 	devtool: isDev ? 'source-map' : false,
+	devServer: {
+		port: 3000,
+		hot: isDev
+	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HTMLWebpackPlugin({
@@ -50,7 +54,13 @@ module.exports = {
 			{
 				test: /\.s[ac]ss$/i,
 				use: [
-					MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: isDev,
+							reloadAll: true
+						}
+					},
 					'css-loader',
 					'sass-loader'
 				],
