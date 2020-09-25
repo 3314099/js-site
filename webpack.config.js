@@ -11,7 +11,7 @@ const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
 
 const jsLoaders = () => {
   const loaders = [
-    'babel-loader'
+    {loader: 'babel-loader'}
   ]
 
   if (isDev) {
